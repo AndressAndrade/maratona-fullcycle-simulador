@@ -49,15 +49,7 @@ jobs:
 
       - uses: actions/checkout@v2
 
-      - run: mkdir -p artefato
-
-      - run: cd artefato
-
-      - run: ls
-
-      - run: ${pwd}
-
-      - run: GOOS=windows go build simulator.go
+      - run: mkdir -p artefato && cd artefato && ls && GOOS=windows go build simulator.go
 
       - uses: actions/upload-artifact@v1
         with:
