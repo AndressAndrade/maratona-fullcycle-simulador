@@ -41,12 +41,12 @@ jobs:
     name: release linux/amd64
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - name: Compile and release
-        uses: ngs/go-release.action@v1.0.1
-        env:
+        uses: wangyoucao577/go-release-action@master
+        with:
           GO111MODULE: on
-          CGO_ENABLED: 0
-          GITHUB_TOKEN: ${{ secrets.token }}
-          GOARCH: amd64
-          GOOS: linux
+          cgo_enabled: 0
+          github_token: ${{ secrets.token }}
+          goarch: amd64
+          goos: linux
