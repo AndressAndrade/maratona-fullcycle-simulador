@@ -46,6 +46,7 @@ jobs:
         uses: ngs/go-release.action@v1.0.1
         env:
           GO111MODULE: on
+          CGO_ENABLED: 0
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOARCH: amd64
           GOOS: linux
