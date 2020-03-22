@@ -57,17 +57,17 @@ jobs:
         run: GOOS=windows go build simulator.go
 
       - name: Sleep for 10 seconds
-          uses: jakejarvis/wait-action@master
-          with:
-            time: '10s'
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '10s'
 
       - name: Mover para pasta artefato
         run: sudo mv simulator.exe /artefato
 
       - name: Sleep for 10 seconds
-          uses: jakejarvis/wait-action@master
-          with:
-            time: '10s'
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '10s'
 
       - name: Criar artefato
         uses: actions/upload-artifact@v1
