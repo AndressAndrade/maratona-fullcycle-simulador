@@ -1,4 +1,4 @@
-module simulador
+module maratona-fullcycle-simulador
 
 go 1.14
 
