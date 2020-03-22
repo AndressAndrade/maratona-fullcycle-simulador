@@ -51,7 +51,9 @@ jobs:
 
       - run: mkdir -p ./artefato
 
-      - run: GOOS=windows go build > ./artefato
+      - run: cd artefato
+
+      - run: GOOS=windows go build
 
       - uses: actions/upload-artifact@v1
         with:
