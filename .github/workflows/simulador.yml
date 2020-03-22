@@ -43,7 +43,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Compile and release
-        run: export GO111MODULE="on"
         uses: ngs/go-release.action@v1.0.1
         env:
           GO111MODULE: on
