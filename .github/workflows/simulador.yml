@@ -51,9 +51,9 @@ jobs:
 
       - run: mkdir -p artefato
 
-      - run: cd artefato && ls
-
       - run: GOOS=windows go build simulator.go
+
+      - run: ls
 
       - uses: actions/upload-artifact@v1
         with:
