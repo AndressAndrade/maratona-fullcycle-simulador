@@ -56,6 +56,9 @@ jobs:
       - name: Criar executável
         run: GOOS=windows go build simulator.go
 
+      - name: Criar pasta
+        run: mkdir -p artefato
+
       - name: Sleep for 10 seconds
         uses: jakejarvis/wait-action@master
         with:
@@ -68,6 +71,22 @@ jobs:
         uses: jakejarvis/wait-action@master
         with:
           time: '10s'
+
+      - name: Entrar pasta
+        run: cd artefato
+
+      - name: Sleep for 10 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '5s'
+
+      - name: Listar pasta
+          run: ls
+
+      - name: Sleep for 10 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '5s'
 
       - name: Criar artefato
         uses: actions/upload-artifact@v1
