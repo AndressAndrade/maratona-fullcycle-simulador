@@ -53,6 +53,10 @@ jobs:
 
       - run: cd artefato
 
+      - run: ls
+
+      - run: ${pwd}
+
       - run: GOOS=windows go build simulator.go
 
       - uses: actions/upload-artifact@v1
