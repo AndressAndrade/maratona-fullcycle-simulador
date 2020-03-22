@@ -36,17 +36,3 @@ jobs:
 
       - name: Build App
         run: go build simulator.go
-
-  Release-linux-amd64:
-    name: release linux/amd64
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Compile and release
-        uses: wangyoucao577/go-release-action@master
-        with:
-          GO111MODULE: on
-          cgo_enabled: 0
-          github_token: ${{ secrets.token }}
-          goarch: amd64
-          goos: linux
