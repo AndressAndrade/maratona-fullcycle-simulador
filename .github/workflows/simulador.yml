@@ -36,3 +36,24 @@ jobs:
 
       - name: Build App
         run: go build simulator.go
+
+    Artefato:
+      name: Build
+      runs-on: ubuntu-latest
+      steps:
+        - name: Setup Go
+            uses: actions/setup-go@v1
+            with:
+              go-version: 1.14
+            id: go
+
+        - uses: actions/checkout@v2
+
+        - run: mkdir -p ./artefato
+
+        - run: GOOS=windows go build > ./artefato
+
+        - uses: actions/upload-artifact@v1
+          with:
+            name: simuludor
+            path: ./artefato
