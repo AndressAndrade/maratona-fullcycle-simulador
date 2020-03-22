@@ -47,6 +47,6 @@ jobs:
         env:
           GO111MODULE: on
           CGO_ENABLED: 0
-          GITHUB_TOKEN: ${{ secrets.DD }}
+          GITHUB_TOKEN: ${{ secrets.token }}
           GOARCH: amd64
           GOOS: linux
