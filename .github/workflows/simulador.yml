@@ -42,9 +42,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: compile and release
+      - name: Compile and release
+        run: export GO111MODULE="on"
         uses: ngs/go-release.action@v1.0.1
         env:
+          GO111MODULE: on
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOARCH: amd64
           GOOS: linux
