@@ -47,19 +47,20 @@ jobs:
           go-version: 1.14
         id: go
 
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      - run: mkdir -p artefato
+      - name: Criar pasta
+        run: mkdir -p artefato
 
-      - run: GOOS=windows go build simulator.go && sudo mv simulator.exe /artefato
+      - name: Criar executável
+        run: GOOS=windows go build simulator.go
 
-      - run: echo Ola
+      - name: Mover para pasta artefato
+        run: sudo mv simulator.exe /artefato
 
-      - run: cd artefato
-
-      - run: ls
-
-      - uses: actions/upload-artifact@v1
+      - name: Criar artefato
+        uses: actions/upload-artifact@v1
         with:
           name: simulador
           path: artefato
